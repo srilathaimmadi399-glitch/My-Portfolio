@@ -1,739 +1,1094 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <title>Srilatha Immadi - Portfolio</title>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Immadi Srilatha - Portfolio</title>
 
     <style>
-        :root{
-    --primary-color:#2563eb;
-    --secondary-color:#1f2937;
-    --text-color:#333;
-    --bg-color:#f4f6f9;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1f2937;
+            --accent-color: #7c3aed;
+            --text-color: #333;
+            --bg-color: #f4f6f9;
+            --white: #ffffff;
         }
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        body{
-    font-family: Arial, sans-serif;
-    background-color:var(--bg-color);
-    color:var(--text-color);
-    line-height:1.6;
+        html {
+            scroll-behavior: smooth;
         }
 
-        header{
-            background-color:#1f2937;
-            color:white;
-            text-align:center;
-            padding:20px;
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+
+            background: linear-gradient(
+                -45deg,
+                #dbeafe,
+                #bfdbfe,
+                #e0e7ff,
+                #f5f3ff
+            );
+
+            background-size: 400% 400%;
+            animation: bgAnimation 12s ease infinite;
         }
 
-        nav{
-            margin-top:10px;
+        /* ================= HEADER ================= */
+
+        header {
+            background: linear-gradient(
+                135deg,
+                #1e293b,
+                #1e3a8a
+            );
+
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin:15px;
-            font-weight:bold;
-            transition:all 0.4s ease;
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
         }
 
-        nav a:hover{
-            color:#facc15;
-            font-size:18px;
+        nav {
+            position: sticky;
+            top: 0;
+            background: #1f2937;
+            padding: 15px;
+            z-index: 1000;
         }
 
-        section{
-            background:white;
-            margin:20px;
-            padding:20px;
-            border-radius:10px;
-            box-shadow:0 2px 5px rgba(0,0,0,0.2);
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        h2{
-            color:#2563eb;
-            margin-bottom:10px;
-            border-bottom:2px solid #2563eb;
-            padding-bottom:5px;
+        nav a:hover {
+            color: #facc15;
         }
 
-        p{
-            margin-bottom:10px;
+        /* ================= MAIN ================= */
+
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
         }
 
-        table{
-            width:100%;
-            border-collapse:collapse;
-            margin-top:10px;
+        section {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+
+            margin: 25px 0;
+            padding: 30px;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(255, 255, 255, 0.5);
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+            transition: 0.4s;
+
+            animation: fadeIn 1s ease;
         }
 
-        table, th, td{
-            border:1px solid #333;
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.18);
         }
 
-        th{
-            background-color:#2563eb;
-            color:white;
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-color);
+            position: relative;
         }
 
-        th, td{
-            padding:10px;
-            text-align:center;
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 70px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 10px;
         }
 
-        ul{
-            margin-left:25px;
+        h3 {
+            margin-bottom: 10px;
         }
 
-        li{
-            margin-bottom:8px;
-            color:#333;
+        p {
+            margin-bottom: 12px;
         }
 
-        article{
-            background-color:#eef4ff;
-            border-left:5px solid #2563eb;
-            padding:15px;
-            margin-bottom:15px;
-            border-radius:5px;
+        ul {
+            margin-left: 25px;
         }
 
-        form{
-            margin-top:10px;
+        li {
+            margin-bottom: 8px;
         }
 
-        label{
-            font-weight:bold;
+        /* ================= HERO ================= */
+
+        .hero {
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+
+            color: white;
+            text-align: center;
+
+            padding: 80px 20px;
+
+            border-radius: 25px;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+
+            animation: slideIn 1.2s ease;
         }
 
-        input,
-        textarea{
-            width:100%;
-            padding:10px;
-            margin-top:5px;
-            margin-bottom:15px;
-            border:1px solid #ccc;
-            border-radius:5px;
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.35);
         }
 
-        input[type="submit"]{
-            background-color:#2563eb;
-            color:white;
-            border:none;
-            cursor:pointer;
-            font-weight:bold;
+        .hero h3 {
+            color: #facc15;
+            margin: 15px 0;
         }
 
-        input[type="submit"]:hover{
-            background-color:#1d4ed8;
+        .hero p {
+            max-width: 750px;
+            margin: auto;
         }
 
-        footer{
-            background-color:#1f2937;
-            color:white;
-            text-align:center;
-            padding:15px;
-            margin-top:20px;
+        /* ================= BUTTONS ================= */
+
+        .btn-container {
+            margin-top: 25px;
         }
 
-        a{
-            color:#2563eb;
+        .btn {
+            display: inline-block;
+
+            margin: 8px;
+            padding: 13px 25px;
+
+            background: white;
+            color: #1d4ed8;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+            transition: 0.3s;
         }
-        html{
-            scroll-behavior:smooth;
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: #f8fafc;
         }
 
-nav{
-    position:sticky;
-    top:0;
-    background:#1f2937;
-    padding:15px;
-    z-index:1000;
-}
+        .resume-btn {
+            background: #facc15;
+            color: #111827;
+        }
 
-.hero{
-    background-color:var(--secondary-color);
+        .resume-btn:hover {
+            background: #fde047;
+        }
 
-    /* Background Properties */
-    background-position:center;
-    background-size:cover;
-    background-repeat:no-repeat;
+        /* ================= EDUCATION ================= */
 
-    color:white;
-    text-align:center;
-    padding:80px 20px;
+        .table-container {
+            overflow-x: auto;
+        }
 
-    animation:slideIn 1.5s ease;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            min-width: 700px;
+        }
 
-.hero h1{
-    font-size:50px;
-}
+        table,
+        th,
+        td {
+            border: 1px solid #333;
+        }
 
-.hero h3{
-    color:#facc15;
-    margin:15px 0;
-}
+        th {
+            background: #2563eb;
+            color: white;
+        }
 
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    background:white;
-    color:var(--primary-color);
-    padding:12px 25px;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:bold;
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+        }
 
-    animation:bounce 2s infinite;
-}
+        /* ================= SKILLS ================= */
 
-.btn:hover{
-    transform:scale(1.05);
-}
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 0;
+        }
 
-section{
-    animation:fadeIn 1s ease;
-}
+        .skills-grid li {
+            list-style: none;
 
-@keyframes slideIn{
-    from{
-        opacity:0;
-        transform:translateX(-100px);
-    }
-    to{
-        opacity:1;
-        transform:translateX(0);
-    }
-}
-@keyframes bounce{
-    0%,20%,50%,80%,100%{
-        transform:translateY(0);
-    }
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
 
-    40%{
-        transform:translateY(-15px);
-    }
+            color: white;
 
-    60%{
-        transform:translateY(-8px);
-    }
-}
+            padding: 10px 18px;
 
-article{
-    transition:0.3s;
-}
+            border-radius: 25px;
 
-article:hover{
-    transform:translateY(-8px);
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
+            font-weight: 500;
 
-.skills-grid{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 
-.skills-grid li{
-    list-style:none;
-    background:var(--primary-color);
-    color:white;
-    padding:10px 15px;
-    border-radius:20px;
-    transition:0.4s;
-}
+            transition: 0.3s;
+        }
 
-.skills-grid li:hover{
-    transform:scale(1.1) rotate(3deg);
-}
-details{
-    margin-top:15px;
-}
+        .skills-grid li:hover {
+            transform: scale(1.08);
+        }
 
-summary{
-    background:#2563eb;
-    color:white;
-    padding:12px;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
-    display:inline-block;
-}
+        /* ================= PROJECTS ================= */
 
-summary:hover{
-    background:#1d4ed8;
-}
-.contact-box{
-    text-align:center;
-    margin-top:20px;
-}
+        .project-card {
+            background: white;
 
-.contact-btn{
-    display:inline-block;
-    margin:10px;
-    padding:15px 25px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
-    transition:0.3s;
-}
+            border-left: 5px solid #2563eb;
 
-.contact-btn:hover{
-    background:#1d4ed8;
-    transform:translateY(-5px);
-}
-@media(max-width:768px){
+            padding: 22px;
 
-    nav a{
-        display:block;
-        margin:10px 0;
-    }
+            margin-bottom: 20px;
 
-    .hero h1{
-        font-size:32px;
-    }
+            border-radius: 12px;
 
-    table{
-        font-size:12px;
-    }
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
-    video{
-        width:100%;
-    }
-}
+            transition: 0.3s;
+        }
 
-@media(min-width:769px) and (max-width:1024px){
+        .project-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.2);
+        }
 
-    .hero h1{
-        font-size:42px;
-    }
+        .project-card h3 {
+            color: #1d4ed8;
+        }
 
-    section{
-        margin:15px;
-    }
-}
+        .tech {
+            font-weight: 600;
+            color: #7c3aed;
+        }
 
-@media(min-width:1200px){
+        .project-card ul {
+            margin-top: 10px;
+        }
 
-    main{
-        width:80%;
-        margin:auto;
-    }
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        /* ================= CERTIFICATIONS ================= */
 
-body{
-    font-family:'Poppins',sans-serif;
-}
-.hero{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
+        .certification-list li {
+            margin-bottom: 10px;
+        }
 
-section:hover{
-    transform:translateY(-8px);
-    box-shadow:0 10px 25px rgba(37,99,235,0.2);
-}
+        /* ================= SOCIAL LINKS ================= */
 
-.contact-btn{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-}
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-footer{
-    background:linear-gradient(135deg,#1e293b,#0f172a);
-}
-/* Animated Background */
-body{
-    background: linear-gradient(-45deg,#dbeafe,#bfdbfe,#e0e7ff,#f5f3ff);
-    background-size:400% 400%;
-    animation:bgAnimation 12s ease infinite;
-}
+        .social-links a {
+            display: inline-block;
 
-@keyframes bgAnimation{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
+            padding: 12px 20px;
 
-/* Hero Decoration */
-.hero{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    border-radius:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.3);
-}
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
 
-.hero h1{
-    font-size:60px;
-    text-shadow:3px 3px 15px rgba(0,0,0,0.4);
-}
+            color: white;
 
-.hero h3{
-    color:#facc15;
-}
+            text-decoration: none;
 
-/* Glass Effect Sections */
-section{
-    background:rgba(255,255,255,0.9);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.4);
-    transition:0.4s;
-}
+            border-radius: 10px;
 
-section:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 30px rgba(37,99,235,0.2);
-}
+            font-weight: 600;
 
-/* Heading Decoration */
-h2{
-    position:relative;
-    padding-bottom:10px;
-}
+            transition: 0.3s;
+        }
 
-h2::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:0;
-    width:70px;
-    height:4px;
-    background:#2563eb;
-    border-radius:10px;
-}
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
 
-/* Skills */
-.skills-grid li{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
+        /* ================= CONTACT ================= */
 
-.skills-grid li:hover{
-    transform:scale(1.1);
-}
+        .contact-box {
+            text-align: center;
+        }
 
-/* Project Cards */
-article{
-    border-radius:15px;
-    background:white;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+        .contact-btn {
+            display: inline-block;
 
-/* Buttons */
-.btn,
-.contact-btn,
-input[type="submit"]{
-    background:white;
-    color:#1d4ed8;
-    border:none;
-    box-shadow:0 5px 15px rgba(37,99,235,0.3);
-}
+            margin: 10px;
 
-.btn:hover,
-.contact-btn:hover,
-input[type="submit"]:hover{
-    transform:translateY(-5px) scale(1.05);
-}
+            padding: 14px 25px;
 
-/* Footer */
-footer{
-    background:linear-gradient(135deg,#111827,#1e3a8a);
-}
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
 
-/* Scrollbar */
-::-webkit-scrollbar{
-    width:10px;
-}
+            color: white;
 
-::-webkit-scrollbar-thumb{
-    background:#2563eb;
-    border-radius:20px;
-}
+            text-decoration: none;
 
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        /* ================= AUDIO / VIDEO ================= */
+
+        audio,
+        video {
+            max-width: 100%;
+            margin-top: 10px;
+        }
+
+        /* ================= MAP ================= */
+
+        iframe {
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: linear-gradient(
+                135deg,
+                #111827,
+                #1e3a8a
+            );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 30px;
+        }
+
+        /* ================= ANIMATIONS ================= */
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bgAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ================= SCROLLBAR ================= */
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2563eb;
+            border-radius: 20px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 7px;
+                font-size: 14px;
+            }
+
+            main {
+                width: 94%;
+            }
+
+            section {
+                padding: 20px;
+                margin: 18px 0;
+            }
+
+            .hero {
+                padding: 60px 15px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero h3 {
+                font-size: 17px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-links a {
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            main {
+                width: 92%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+            main {
+                width: 85%;
+            }
+        }
     </style>
-    </head>
-    
+</head>
+
 <body>
 
-<header>
-    <h1>SRILATHA IMMADI</h1>
+    <!-- ================= HEADER ================= -->
 
-    <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    </nav>
-    <hr>
-</header>
+    <header>
 
-<main>
+        <h1>IMMADI SRILATHA</h1>
 
-<section id="home" class="hero">
-    <h1>SRILATHA IMMADI</h1>
+        <nav>
 
-    <h3>
-        Data Science Student | Python Developer |
-        Quick Learner
-    </h3>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
 
-    <p>
-        Passionate about Data Analysis,
-        Data Visualization and building real-world projects.
-    </p>
+        </nav>
 
-    <a href="#projects" class="btn">
-        View Projects
-    </a>
-</section>
+    </header>
 
-<section id="about">
-    <h2>About Me</h2>
 
-    <p>
-        I am SRILATHA IMMADI, a B.Tech Data Science student at
-        Chalapathi Institute of Technology with knowledge of
-        Python, SQL, Data Visualization,Data Analysis, and Database Management Systems.
-    </p>
+    <main>
 
-    <h3>Career Goal</h3>
+        <!-- ================= HOME ================= -->
 
-    <p>
-        Seeking opportunities to apply technical and analytical
-        skills in software engineering and data-driven roles while
-        continuously learning new technologies.
-    </p>
+        <section id="home" class="hero">
 
-    <h3>Interests</h3>
+            <h1>IMMADI SRILATHA</h1>
 
-    <ul>
-        <li>Data Science</li>
-        <li>Data Analytics</li>
-        <li>Software Development</li>
-        <li>Problem Solving</li>
-    </ul>
-</section>
+            <h3>
+                Data Science Student | Python & Java Developer | MERN Stack
+            </h3>
 
-<section id="education">
-    <h2>Education</h2>
+            <p>
+                Motivated Data Science student passionate about developing
+                scalable web applications and intelligent systems.
+            </p>
 
-    <table border="1">
-        <tr>
-            <th>Qualification</th>
-            <th>Institution</th>
-            <th>Board/University</th>
-            <th>Year</th>
-            <th>Percentage/CGPA</th>
-        </tr>
+            <div class="btn-container">
 
-        <tr>
-            <td>B.Tech Data Science</td>
-            <td>Chalapathi Institute of Technology</td>
-            <td>JNTUK</td>
-            <td>2023 - Present</td>
-            <td>7.82 CGPA</td>
-        </tr>
+                <a href="#projects" class="btn">
+                    View Projects
+                </a>
 
-        <tr>
-            <td>Diploma</td>
-            <td>Govt Polytechnic For Women Medak</td>
-            <td>SBTET</td>
-            <td>2024</td>
-            <td>87%</td>
-        </tr>
+                <a
+                    href="Srilatha-Immadi-Resume.pdf"
+                    download
+                    class="btn resume-btn"
+                >
+                    📄 Download Resume
+                </a>
 
-        <tr>
-            <td>SSC</td>
-            <td>Zilla Parishath High School</td>
-            <td>SSC</td>
-            <td>2021</td>
-            <td>90%</td>
-        </tr>
-    </table>
-</section>
+            </div>
 
-<section id="skills">
-    <h2>Skills</h2>
+        </section>
 
-    <ul class="skills-grid">
-        <li>Python</li>
-        <li>SQL</li>
-        <li>Data Visualization</li>
-        <li>Database Management Systems (DBMS)</li>
-        <li>Data Analysis</li>
-        <li>Problem Solving</li>
-    </ul>
-</section>
 
-<section id="projects">
-    <h2>Projects</h2>
+        <!-- ================= ABOUT ================= -->
 
-    <article>
-        <h3>IPL 2025 Exploratory Data Analysis (EDA)</h3>
+        <section id="about">
+
+            <h2>About Me</h2>
+
+            <p>
+                I am Immadi Srilatha, a B.Tech Data Science student at
+                Chalapathi Institute of Technology. I have knowledge of
+                Python, Java, MERN Stack, and Machine Learning.
+            </p>
+
+            <p>
+                I am passionate about developing scalable web applications
+                and intelligent systems. I am seeking opportunities where
+                I can apply my technical skills while continuously learning
+                and contributing to organizational success.
+            </p>
+
+            <h3>Career Goal</h3>
+
+            <p>
+                To apply my technical and problem-solving skills in a
+                challenging software or data-driven role while continuously
+                learning new technologies.
+            </p>
+
+            <h3>Interests</h3>
+
+            <ul>
+
+                <li>Data Science</li>
+                <li>Machine Learning</li>
+                <li>Web Development</li>
+                <li>Software Development</li>
+                <li>Problem Solving</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- ================= EDUCATION ================= -->
+
+        <section id="education">
+
+            <h2>Education</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <tr>
+                        <th>Qualification</th>
+                        <th>Institution</th>
+                        <th>Board / University</th>
+                        <th>Year</th>
+                        <th>Percentage / CGPA</th>
+                    </tr>
+
+                    <tr>
+
+                        <td>B.Tech in Data Science</td>
+
+                        <td>
+                            Chalapathi Institute of Technology
+                        </td>
+
+                        <td>
+                            JNTUK
+                        </td>
+
+                        <td>
+                            2024 - 2027
+                        </td>
+
+                        <td>
+                            -
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            Diploma in Computer Science and Engineering
+                        </td>
+
+                        <td>
+                            Government Polytechnic for Women, Medak
+                        </td>
+
+                        <td>
+                            SBTET
+                        </td>
+
+                        <td>
+                            2021 - 2024
+                        </td>
+
+                        <td>
+                            87%
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SKILLS ================= -->
+
+        <section id="skills">
+
+            <h2>Technical Skills</h2>
+
+            <ul class="skills-grid">
+
+                <li>Python</li>
+                <li>Java</li>
+
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React.js</li>
+
+                <li>Node.js</li>
+                <li>Express.js</li>
+
+                <li>MongoDB</li>
+
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>VS Code</li>
+                <li>Postman</li>
+
+                <li>Windows</li>
+                <li>Linux</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section id="projects">
+
+            <h2>Projects</h2>
+
+
+            <!-- Project 1 -->
+
+            <article class="project-card">
+
+                <h3>
+                    Breast Cancer Detection System
+                </h3>
+
+                <p class="tech">
+                    Technologies: MERN Stack, React.js, Node.js,
+                    Express.js, MongoDB
+                </p>
+
+                <p>
+                    Developed a web application to predict breast cancer
+                    using patient medical data.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Built a responsive frontend using React.js.
+                    </li>
+
+                    <li>
+                        Developed backend APIs using Node.js and Express.js.
+                    </li>
+
+                    <li>
+                        Stored patient records and prediction history
+                        in MongoDB.
+                    </li>
+
+                    <li>
+                        Implemented an interactive dashboard for
+                        managing and viewing prediction information.
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+            <!-- Project 2 -->
+
+            <article class="project-card">
+
+                <h3>
+                    Placement Management System
+                </h3>
+
+                <p class="tech">
+                    Technologies: MERN Stack, React.js, Node.js,
+                    Express.js, MongoDB
+                </p>
+
+                <p>
+                    Developed a placement portal for managing student
+                    records and recruitment details.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Implemented student registration and login.
+                    </li>
+
+                    <li>
+                        Developed a student dashboard.
+                    </li>
+
+                    <li>
+                        Implemented CRUD operations for student records.
+                    </li>
+
+                    <li>
+                        Used MongoDB for secure data storage.
+                    </li>
+
+                    <li>
+                        Built responsive user interfaces using React.js.
+                    </li>
+
+                </ul>
+
+            </article>
+
+        </section>
+
+
+        <!-- ================= CERTIFICATIONS ================= -->
+
+        <section id="certifications">
+
+            <h2>Certifications</h2>
+
+            <ul class="certification-list">
+
+                <li>
+                    Cloud Computing – NPTEL
+                </li>
+
+                <li>
+                    Internet of Things – NPTEL
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- ================= SOCIAL LINKS ================= -->
+
+        <section>
+
+            <h2>Professional Profiles</h2>
+
+            <div class="social-links">
+
+                <a
+                    href="https://github.com/srilathaimmadi399-glitch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub Profile
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/srilatha-immadi-10634b3aa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn Profile
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT INFORMATION ================= -->
+
+        <section>
+
+            <h2>Contact Information</h2>
+
+            <p>
+                <strong>Email:</strong>
+                srilathaimmadi399@gmail.com
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                +91 9963994294
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Amaravati, Andhra Pradesh
+            </p>
+
+        </section>
+
+
+        <!-- ================= SELF INTRODUCTION AUDIO ================= -->
+
+        <section>
+
+            <h2>Self Introduction Audio</h2>
+
+            <audio controls>
+
+                <source
+                    src="intro.mp3"
+                    type="audio/mpeg"
+                >
+
+                Your browser does not support the audio element.
+
+            </audio>
+
+        </section>
+
+
+        <!-- ================= INTRODUCTION VIDEO ================= -->
+
+        <section>
+
+            <h2>Introduction Video</h2>
+
+            <video width="500" controls>
+
+                <source
+                    src="intro.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support the video element.
+
+            </video>
+
+        </section>
+
+
+        <!-- ================= COLLEGE LOCATION ================= -->
+
+        <section>
+
+            <h2>College Location</h2>
+
+            <iframe
+                src="https://www.google.com/maps?q=Chalapathi+Institute+of+Technology+Mothadaka+Guntur&output=embed"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+
+        </section>
+
+
+        <!-- ================= RESUME ================= -->
+
+        <section>
+
+            <h2>Resume</h2>
+
+            <div class="contact-box">
+
+                <p>
+                    Interested in learning more about my education,
+                    technical skills, and projects?
+                </p>
+
+                <a
+                    href="Srilatha-Immadi-Resume.pdf"
+                    download
+                    class="contact-btn"
+                >
+                    📄 Download Resume
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact">
+
+            <h2>Contact Me</h2>
+
+            <div class="contact-box">
+
+                <a
+                    href="mailto:srilathaimmadi399@gmail.com"
+                    class="contact-btn"
+                >
+                    📧 Email Me
+                </a>
+
+                <a
+                    href="tel:+919963994294"
+                    class="contact-btn"
+                >
+                    📞 Call Me
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/srilatha-immadi-10634b3aa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-btn"
+                >
+                    💼 LinkedIn
+                </a>
+
+                <a
+                    href="https://github.com/srilathaimmadi399-glitch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-btn"
+                >
+                    💻 GitHub
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>
+            IMMADI SRILATHA
+        </h3>
+
         <p>
-            <b>Technologies:</b>
-            Python, Pandas, NumPy, Matplotlib, Seaborn,
-            Jupyter Notebook
+            Data Science Student | MERN Stack Developer
         </p>
 
         <p>
-            Performed Exploratory Data Analysis on IPL 2025
-            datasets to analyze team performance, player statistics,
-            and match trends.
-        </p>
-    </article>
-
-    <article>
-        <h3>IPL Match Outcome Predictor</h3>
-
-        <p>
-            <b>Technologies:</b>
-            Python, Pandas, NumPy, Scikit-Learn,
-            Jupyter Notebook, GitHub
+            Email: srilathaimmadi399@gmail.com
         </p>
 
         <p>
-            Developed a machine learning model that predicts
-            real-time win probability during IPL matches using
-            Random Forest Classifier.
-        </p>
-    </article>
-
-    <article>
-        <h3>Student Attendance Management System</h3>
-
-        <p>
-            <b>Technologies:</b>
-            Python, Flask, SQLite
+            Phone: +91 9963994294
         </p>
 
         <p>
-            Developed a web-based attendance management system
-            for recording and monitoring student attendance.
+            &copy; 2026 Immadi Srilatha. All Rights Reserved.
         </p>
-    </article>
-</section>
 
-<section>
-    <h2>Certifications</h2>
-
-    <ul>
-        <li>Internet of Things (IoT) – NPTEL</li>
-        <li>Cloud Virtual Internship – AWS Academy & EduSkills</li>
-        <li>Generative AI Virtual Internship – Google Cloud & EduSkills</li>
-        <li>Data Engineering Virtual Internship – EduSkills Academy</li>
-        <li>Database Management System Certificate – CodeChef</li>
-    </ul>
-<section>
-    <h2>Social Links</h2>
-
-    <a href="https://github.com/srilathaimmadi399-glitch" target="_blank">
-        GitHub Profile
-    </a>
-
-    <br><br>
-
-    <a href="https://www.linkedin.com/in/srilatha-immadi-10634b3aa?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-       target="_blank">
-        LinkedIn Profile
-    </a>
-</section>
-
-<section>
-    <h2>Contact Information</h2>
-
-    <p>Email: srilathaimmadi399@gmail.com</p>
-    <p>Phone: +91 9963994294</p>
-</section>
-
-<section>
-    <h2>Self Introduction Audio</h2>
-
-    <audio controls>
-        <source src="intro.mp3" type="audio/mpeg">
-    </audio>
-</section>
-
-<section>
-    <h2>Introduction Video</h2>
-
-    <video width="500" controls>
-        <source src="intro.mp4" type="video/mp4">
-    </video>
-</section>
-
-<section>
-    <h2>College Location</h2>
-
-<iframe
-    src="https://www.google.com/maps?q=Chalapathi+Institute+of+Technology+Mothadaka+Guntur&output=embed"
-    width="100%"
-    height="450"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy">
-</iframe>
-</section>
-<section id="resume">
-    <h2>Resume</h2>
-
-    <details>
-        <summary>📄 Upload Resume</summary>
-
-        <form>
-            <label>Name:</label>
-            <input type="text" required>
-
-            <label>Email:</label>
-            <input type="email" required>
-
-            <label>Upload Resume:</label>
-            <input type="file" required>
-
-            <input type="submit" value="Submit">
-        </form>
-    </details>
-</section>
- <section id="contact">
-    <h2>Contact Me</h2>
-
-    <div class="contact-box">
-        <a href="mailto:srilathaimmadi399@gmail.com" class="contact-btn">
-            📧 Email Me
-        </a>
-
-        <a href="tel:9963994294" class="contact-btn">
-            📞 Call Me
-        </a>
-
-        <a href="https://www.linkedin.com/in/srilatha-immadi-10634b3aa?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-           target="_blank"
-           class="contact-btn">
-            💼 LinkedIn
-        </a>
-    </div>
-</section>   
-
-</main>
-
-<footer>
-    <h3>SRILATHA IMMADI</h3>
-    <p>Data Science Student | Python Developer</p>
-    <p>Email: srilathaimmadi399@gmail.com</p>
-    <p>Phone: +91 9963994294</p>
-    <p>&copy; 2026 All Rights Reserved</p>
-</footer>
+    </footer>
 
 </body>
+
 </html>
